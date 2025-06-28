@@ -1,0 +1,43 @@
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.card {
+  flex: 0 0 auto;
+  min-width: 160px;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 16px;
+}
+
+.loader {
+  border: 6px solid #eee;
+  border-top: 6px solid #007acc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

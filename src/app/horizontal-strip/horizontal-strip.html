@@ -1,0 +1,13 @@
+<h2>{{ block.header }}</h2>
+<div *ngIf="loading" class="loader-container">
+  <div class="loader"></div>
+</div>
+
+<div *ngIf="!loading" class="scroll-container">
+  <div class="card" *ngFor="let item of block.data">
+    <img
+      [src]="item.verticalPhotos?.[0]?.photoTypes?.['80']?.url"
+      alt="{{ item.title }}" />
+    <p>{{ item.heading }}</p>
+  </div>
+</div>
