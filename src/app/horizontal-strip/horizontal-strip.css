@@ -1,24 +1,83 @@
+/* === Общий фон и цвет текста === */
+body {
+  margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  background-color: #101820; /* Темно-синий фон Jupiter */
+  color: #fff;
+}
+
+/* === Заголовки === */
+h1, h2, h3 {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 22px;
+  padding: 0 40px;
+  color: #fff;
+}
+
+/* === Секции (например: .category-block) === */
+.section {
+  margin-top: 30px;
+  background-color: #1d2935;
+  padding: 16px 0;
+  border-radius: 6px;
+}
+
+/* === Кнопки === */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #fff;
+}
+
+/* === Линки === */
+a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+.strip-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .scroll-container {
   display: flex;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
   gap: 12px;
-  padding: 10px 0;
+  padding: 12px 0;
+  margin: 0 40px;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
   flex: 0 0 auto;
-  min-width: 160px;
-  background: #f0f0f0;
-  padding: 10px;
-  border-radius: 6px;
+  width: 180px;
   text-align: center;
+  background: #f2f2f2;
+  border-radius: 8px;
 }
-
 .card img {
   width: 100%;
-  height: auto;
   border-radius: 4px;
 }
+
 .loader-container {
   display: flex;
   justify-content: center;
@@ -26,7 +85,6 @@
   height: 120px;
   margin-bottom: 16px;
 }
-
 .loader {
   border: 6px solid #eee;
   border-top: 6px solid #007acc;
@@ -35,9 +93,82 @@
   height: 40px;
   animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
+}
+
+.scroll-btn-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+
+  transition: 0.4s;
+}
+.scroll-btn-wrapper.left {
+  left: 0;
+}
+.scroll-btn-wrapper.right {
+  right: 0;
+}
+
+.scroll-gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+}
+.scroll-gradient.left {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), transparent);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.scroll-gradient.right {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), transparent);
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.scroll-gradient.right {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.15), transparent);
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.arrow-button {
+  z-index: 2;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+  pointer-events: all;
+}
+.arrow-button:hover {
+  background-color: #eee;
+}
+
+.scroll-btn-wrapper.left:hover{
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent);
+    border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.scroll-btn-wrapper.right:hover{
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+    border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
 }

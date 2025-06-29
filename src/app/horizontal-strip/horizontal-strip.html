@@ -1,13 +1,40 @@
 <h2>{{ block.header }}</h2>
+
 <div *ngIf="loading" class="loader-container">
   <div class="loader"></div>
 </div>
 
-<div *ngIf="!loading" class="scroll-container">
-  <div class="card" *ngFor="let item of block.data">
-    <img
-      [src]="item.verticalPhotos?.[0]?.photoTypes?.['80']?.url"
-      alt="{{ item.title }}" />
-    <p>{{ item.heading }}</p>
+<div *ngIf="!loading" class="strip-wrapper">
+  <div
+    class="scroll-btn-wrapper left"
+    *ngIf="showLeft"
+    (click)="scrollLeft()"
+  >
+    <div class="scroll-gradient left"></div>
+    <button class="arrow-button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="black">
+        <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div #scrollContainer class="scroll-container">
+    <div class="card" *ngFor="let item of block.data">
+      <img [src]="item.verticalPhotos?.[0]?.photoTypes?.['80']?.url" alt="{{ item.heading }}" />
+      <!-- <p>{{ item.heading }}</p> -->
+    </div>
+  </div>
+
+  <div
+    class="scroll-btn-wrapper right"
+    *ngIf="showRight"
+    (click)="scrollRight()"
+  >
+    <div class="scroll-gradient right"></div>
+    <button class="arrow-button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="black">
+        <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+      </svg>
+    </button>
   </div>
 </div>
