@@ -1,13 +1,13 @@
+## Projekti käivitamise juhend
 
-## ✅ Projekti käivitamine lokaalselt
-1. Klooni repositoorium:
-   ```bash
-   git clone https://github.com/KotBegemotEST/AngERR.git
-   cd AngERR
-Paigalda sõltuvused:
-npm install
-Käivita projekt:
+1. Klooni repositoorium ja liigu kausta:  
+   `git clone https://github.com/KotBegemotEST/AngERR.git && cd AngERR`
 
-ng serve
-Ava rakendus brauseris:
-http://localhost:4200
+2. Paigalda kõik vajalikud sõltuvused:  
+   `npm install`
+
+3. Käivita arenduskeskkond:  
+   `ng serve`
+
+4. Ava veebilehitsejas:  
+   [http://localhost:4200](http://localhost:4200)
